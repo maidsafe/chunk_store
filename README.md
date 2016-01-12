@@ -16,6 +16,6 @@
 
 ## Overview
 
-Simple, non-persistent, disk based key-value store
+Simple, non-persistent, disk based key-value store.
 
 ## Todo Items
