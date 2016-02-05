@@ -82,7 +82,10 @@ impl ChunkStore {
     /// The data are stored in a temporary directory that contains `prefix`
     /// in its name and is placed in the `root` directory.
     /// If `root` doesn't exist, it will be created.
-    pub fn new_in<P: AsRef<Path>>(root: P, prefix: &str, max_space: usize) -> Result<ChunkStore, Error> {
+    pub fn new_in<P: AsRef<Path>>(root: P,
+                                  prefix: &str,
+                                  max_space: usize)
+                                  -> Result<ChunkStore, Error> {
         fs::create_dir_all(root.as_ref())
             .and_then(|()| TempDir::new_in(root.as_ref(), prefix))
             .map(|tempdir| {
